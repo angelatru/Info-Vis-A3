@@ -1,0 +1,225 @@
+<html>
+   <head>
+       <!-- Plotly -->
+       <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+       <!-- Maps -->
+       <script src='https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js'></script>
+       <!-- Stylesheets -->
+       <link rel="stylesheet" href="main.css">
+   </head>
+
+   <body class="app-container">
+       <div class="intro-container">
+            <div id="introduction" class="intro-text">
+                <h1>Will we empty<br>the oceans by the next century?</h1>
+
+                <h2>
+                    <b>Overfishing</b> is one of the largest threats endangering the population of marine life. We are 
+                    fishing so much that the ocean has trouble keeping up, unable to naturally replenish at the 
+                    rate we are fishing. Fisheries around the world are continuously being pushed beyond limit, 
+                    at the point of collapse for some. A major reason for overfishing becoming a global problem 
+                    is due to poor fisheries management, and <b>Illegal, Unreported and Unregulated fishing.</b>
+                </h2>
+
+                <img id="green-nets" src="/img/michael-held-K9ILlHvNnso-unsplash.jpg" alt="Green fish nets">
+            </div>
+            <hr>
+       </div>
+
+       <div class="body-container">
+            <div id="cons-trade" class="body-text">
+                <h3>Fish Consumption & Trade</h3>
+    
+                <p>
+                    Let's look at the trend in the consumption of fish in the world and how it has changed overtime. 
+                </p>
+                
+                <!-- Div for graph: consumption of fish in the world, choropleth-->
+                <div id="chart-fish-consumption" class="data-chart-choropleth"></div>
+                <!-- -->
+
+                <p>
+                    Overall, the world is eating more seafood per capita with the forerunners of consumption being Iceland, 
+                    The Maldives, and Hong Kong in 2017. 
+                    <br>
+                    <br>
+                    With more demand for fish as well as technological advancements to 
+                    how we catch fish, more workers are needed to supply for the demand. As such, there has been a boom in the
+                    industry of fisheries and aquaculture, <b>increasing by 60%</b> since 1995.
+                </p>
+
+                <!-- Div for graph: employment in aquaculture, line-->
+                <div id="chart-employment" class="data-chart"></div>
+                <!-- -->
+
+                <p>
+                    <b>Aquaculture</b> refers to the regulated growth (breeding) of aquatic animals and aquatic plants, using or within 
+                    freshwater, sea water, brackish water and inland saline water. The growth of the world's aquaculture industry
+                    is hailed by East Asia and the Pacific, notably China, which in 2015 produced 61 million tonnes. 
+                </p>
+
+                
+                
+                <!-- Div for graph: growth in aquaculture, choropleth-->
+                <div id="chart-aq-production" class="data-chart-choropleth" ></div>
+                <!-- -->
+
+                <p>
+                    The growth in aquaculture over the millennia has made it possible to increase global seafood production 
+                    without sacrificing fish stocks. Production continues to grow while the output of wild fishering has slowed, 
+                    allowing us to maintain sustainable fishing levels that do not put fish populations at risk.
+                    <br>
+                    <br>
+                    Despite the growth in aquaculture and sustainable breeding, it is still a fact that still today, 
+                    illegal fishing within fisheries - which focus on wild catch or producing and collecting fish - 
+                    continue to be the driving factor of depleting fish stocks across the world.
+                </p>
+            </div>
+            <hr>
+            <div id="stocks-heatlh" class="body-text">
+                <h3>Fish Stocks & Health</h3>
+                <br>
+                <h4><b>As of 2017, 34% of global fish stocks are overfished.</b></h4>
+                <br>
+                <p>
+                    <b>Sustainable fishing</b> refers to catching fish at a pace where the stock can naturally reproduce without 
+                    reducing population, resulting in being able to catch as many fish as possible. Overfishing on the other 
+                    hand is where we catch fish faster than they can reproduce. In turn, reducing populations and depleting 
+                    stocks gradually as we fish at a rigorous pace. Overfishing is more prevalent in wild catch fisheries as 
+                    the management of fisheries around the world is not well overseen.
+                </p>
+                <br>
+                <p>
+                    Health of fish stocks refers to the <b>biomass</b> of certain fish stocks, essentially, <b>the amount of wild 
+                    fish</b> in the ocean. <b>The Maximum Sustainable Yield</b> is known as the <b>"sweet spot"</b> for catching fish whereby 
+                    the rate of reproduction and catch is equal. The value of one in the chart is optimal for the "sweet spot". 
+                    A value below one means that the fish stocks are lower than the rate we are catching them, resulting in 
+                    a potential gradual decline in fish population. 
+                </p>
+
+                <!-- Div for graph: fish health, line-->
+                <div id="fish-health-container" class="data-chart" data-num="1">
+                    <div class="control-row-fish">
+                        <div>Fish Group:</div> 
+                        <select class="fishdata"></select>
+                    </div>
+                    <div id="fish-health"></div>
+                </div>
+                <!-- -->
+
+                <p>
+                    Concurrently, if the fishing intensity is too high (above one) then stock will inevitably fall below one.
+                </p>
+
+                 <!-- Div for graph: fish intensity, line-->
+                 <div id="fish-health-intensity-container" class="data-chart" data-num="2">
+                    <div class="control-row-fish">
+                        <div>Fish Group:</div>
+                        <select class="fishdata"></select>
+                    </div>
+                    <div id="fish-health-intensity"></div>
+                </div>
+                 <!-- -->
+
+                <p>
+                    A few marine animals that are of concern of recent are tuna, mackerel, and sharks and rays.
+                </p>
+            </div>
+            <hr>
+            <div id="good-news" class="body-text">
+                <h3>The Good News</h3>
+    
+                <p>
+                    Although the sustainability of global fishery resources continues to decline, the decline is at a much 
+                    reduced state than the past. Improved regulation and effective monitoring of Illegal, Unreported and 
+                    Unregulated fishing has proven successful in reverting overfished populations back to sustainable levels - 
+                    as seen from recent tuna stocks. Unfortunately, the adoption of these regulations have been slow, particularly in developing countries. 
+                </p>
+
+                <!-- Div for graph: fish stocks rising-->
+                <div id="tuna-rising-stock" class="data-chart"></div>
+                <!-- -->
+
+                <p>
+                    These better management of fisheries that have been prevalent in the last millenia positively impacted 
+                    the total fish stocks of the world. There is an upward trend in multiple fish 
+                    health and stocks - particularly tuna -, showcasing the progression towards sustainable fishing . On average, scientifically-assessed 
+                    fish populations around the world are healthy or improving. And, for fish populations that are not doing 
+                    well, there is a clear roadmap to sustainability.
+                </p>
+            </div>
+            <hr>
+            <div id="next-steps" class="conclusion-text">
+                <h3>What Can You Do?</h3>
+    
+                <p>
+                    Organisations across the globe are continuously taking on the necessity of sustainable fishery management, 
+                    keeping the oceans ample with fish. What you can do is be aware and choose certified sustainable seafood
+                    such as the <a class="text-link" href="https://www.msc.org/">Marine Stewardship Council (MSC)</a> and 
+                    <a class="text-link" href="http://www.asc-aqua.org/">Aquaculture Stewardship Council (ASC)</a>. 
+                    You can also help organisations directly by taking action alongside them such as volunteering or help fund 
+                    them by donating what you can.
+                </p>
+            </div>
+
+            <!-- Clickable logos to conservation websites -->
+            <div class="img-container">
+                <div id="wwf" class="logo">
+                    <a href="https://explore.panda.org/oceans">
+                        <img src="/img/wwf.jpeg" alt="WWF Logo">
+                    </a>
+                    <div class="overlay">
+                        <div class="text">
+                            <a href="https://explore.panda.org/oceans" class="logo-text">
+                                <h5><b>World Wide Fund</b></h5>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div id="amcs" class="logo">
+                    <a href="https://www.marineconservation.org.au/fisheries/">
+                        <img src="/img/amcs.png" alt="AMCS Logo">
+                    </a>
+                    
+                    <div class="overlay">
+                        <div class="text">
+                            <a href="https://www.marineconservation.org.au/fisheries/" class="logo-text">
+                                <h5><b>Australian Marine<br>Conservation Society</b></h5>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr id="end">
+            <!-- Reference List -->
+            <div class="ref-container">
+                <div class="ref-list">
+                    <h3 id="ref-title">References</h3>
+                    <p id="references">
+                        FAO. (n.d.). 14.4.1 Fish stocks sustainability | www.fao.org. Food and Agriculture Organization of the United Nations. https://www.fao.org/sustainable-development-goals/indicators/1441/en/
+                        <br>
+                        <br>
+                        FAO. (2020). The State of World Fisheries and Aquaculture 2020. Www.Fao.Org. Retrieved May 14, 2022, from https://www.fao.org/state-of-fisheries-aquaculture
+                        <br>
+                        <br>
+                        Mossler, M. (2020, January 13). Fish populations around the world are improving. Sustainable Fisheries UW. Retrieved May 17, 2022, from https://sustainablefisheries-uw.org/fish-populations-are-improving/
+                        <br>
+                        <br>
+                        Ritchie, H. (2021, April 15). Fish and Overfishing. Our World in Data. Retrieved May 12, 2022, from https://ourworldindata.org/fish-and-overfishing#
+                        <br>
+                        <br>
+                        WWF-Australia. (n.d.). Overfishing. Retrieved May 14, 2022, from https://www.wwf.org.au/what-we-do/oceans/overfishing
+                    </p>
+                </div>
+            </div>
+       </div>
+   </body>
+
+   <!-- Link to our javascript files that we will be working on -->
+   <script src="/charts-js/world-fish-consumption.js"></script>
+   <script src="/charts-js/employed-fisheries-aqculture.js"></script>
+   <script src="/charts-js/aqculture-productiong.js"></script>
+   <script src="/charts-js/fish-health.js"></script>
+   <script src="/charts-js/fish-health-intensity.js"></script>
+   <script src="/charts-js/tuna-stocks.js"></script>
+</html>
